@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputLabel from '@material-ui/core/InputLabel';
 import data from 'utils/dataStore/data';
+import TableData from 'components/TableData';
 
 class SortAndTotal extends React.Component {
   constructor(props) {
@@ -56,6 +57,9 @@ class SortAndTotal extends React.Component {
             <option value="priceAsc">Price high-low</option>
             <option value="priceDsc">Price low-high</option>
           </NativeSelect>
+        </Grid>
+        <Grid item xs={12} className="dataTable">
+          <TableData />
         </Grid>
       </Grid>
     );
