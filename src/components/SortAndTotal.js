@@ -59,7 +59,7 @@ class SortAndTotal extends React.Component {
           </NativeSelect>
         </Grid>
         <Grid item xs={12} className="dataTable">
-          <TableData />
+          <TableData sortingValue={this.state.selectedValue} />
         </Grid>
       </Grid>
     );

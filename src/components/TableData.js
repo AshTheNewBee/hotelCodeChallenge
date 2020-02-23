@@ -8,6 +8,18 @@ import CheckCircle from '@material-ui/icons/CheckCircle';
 import Star from '@material-ui/icons/Star';
 
 class TableData extends Component {
+  state = {
+    field: null,
+    order: null
+  };
+
+  componentDidUpdate = prevProps => {
+    if (prevProps.sortingValue !== this.props.sortingValue) {
+      let order = this.props.sortingValue === 'priceAsc' ? 'asc' : 'desc';
+      this.setState({ field: 'offer.displayPrice.amount', order });
+    }
+  };
+
   propertyImg = () => {
     const ImgColumn = {
       dataField: `property.previewImage.url`,
@@ -105,7 +117,8 @@ class TableData extends Component {
           )}
         </div>
       ),
-      text: ``
+      text: ``,
+      sort: true
     };
     return priceColumn;
   };
@@ -123,6 +136,10 @@ class TableData extends Component {
           data={data.results}
           columns={columns}
           id="dataTable"
+          sort={{
+            dataField: this.state.field,
+            order: this.state.order
+          }}
         />
       </React.Fragment>
     );

@@ -6,6 +6,17 @@ import { shallow } from 'enzyme';
 
 configure({ adapter: new Adapter() });
 
+function setup() {
+  const props = {
+    sortingValue: 'null'
+  };
+  const wrapper = shallow(<TableData {...props} />);
+  return {
+    props,
+    wrapper
+  };
+}
+
 describe('Should create table with hotel data', () => {
   it('should load the bootstrap table', () => {
     const wrapper = shallow(<TableData />);
@@ -22,6 +33,20 @@ describe('Should create table with hotel data', () => {
     const table = wrapper.find('#dataTable');
 
     expect(wrapper.find('.propertyImage').length).toBe(1);
+  });
+
+  it('should sort price high-low', () => {
+    const { wrapper } = setup();
+    wrapper.setProps({ sortingValue: 'priceAsc' });
+    expect(wrapper.instance().state.field).toEqual('offer.displayPrice.amount');
+    expect(wrapper.instance().state.order).toEqual('asc');
+  });
+
+  it('should sort price low-high', () => {
+    const { wrapper } = setup();
+    wrapper.setProps({ sortingValue: 'priceDsc' });
+    expect(wrapper.instance().state.field).toEqual('offer.displayPrice.amount');
+    expect(wrapper.instance().state.order).toEqual('desc');
   });
 
   // it('should truncate the title of the hotel name, if the title is longer than 32 characters', () => {

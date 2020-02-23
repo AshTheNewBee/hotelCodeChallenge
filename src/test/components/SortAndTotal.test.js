@@ -46,4 +46,13 @@ describe('Total and Sorting', () => {
       });
     expect(wrapper.state().selectedValue).toBe('Price low-high');
   });
+
+  it('should call TableData with selectedValue prop', () => {
+    const wrapper = shallow(<SortAndTotal />);
+    wrapper.setState({ sortingValue: 'priceAsc' });
+    expect(wrapper.find('TableData').length).toBe(1);
+    expect(wrapper.find('TableData').props().sortingValue).toEqual(
+      'Price high-low'
+    );
+  });
 });
