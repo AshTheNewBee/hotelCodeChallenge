@@ -39,9 +39,9 @@ class TableData extends Component {
               readOnly
               icon={
                 row.property.rating.ratingType === 'self' ? (
-                  <CheckCircle />
+                  <CheckCircle id="icon" />
                 ) : (
-                  <Star />
+                  <Star id="icon" />
                 )
               }
             />
