@@ -34,13 +34,13 @@ class SortAndTotal extends React.Component {
   render() {
     return (
       <Grid container spacing={0} className="sortAndTotalGrid">
-        <Grid item xs={6} className="hotelTotal">
+        <Grid item xs={9} className="hotelTotal">
           <Typography variant="h6" gutterBottom>
             {data && data.results.length} hotels in {this.state.location}
           </Typography>
         </Grid>
 
-        <Grid item xs={6} className="sortBy">
+        <Grid item xs={3} className="sortBy">
           <InputLabel shrink htmlFor="age-native-label-placeholder">
             Sort by
           </InputLabel>

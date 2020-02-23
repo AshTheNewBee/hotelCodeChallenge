@@ -19,7 +19,23 @@ describe('Should create table with hotel data', () => {
 
   it('should show offer title as a sub column of first column', () => {
     const wrapper = shallow(<TableData />);
-    console.log(wrapper.find('#dataTable'));
-    expect(wrapper.find('.promoTitle').length).toBe(1);
+    const table = wrapper.find('#dataTable');
+
+    expect(wrapper.find('.propertyImage').length).toBe(1);
   });
+
+  // it('should truncate the title of the hotel name, if the title is longer than 32 characters', () => {
+  //     let title = 'Courtyard by Marriott Sydney-North Ryde 7-11 Talavera RdNorth Ryde'
+  //     const wrapper = shallow(<TableData />);
+  // })
+
+  // it('should show address as a sub title in second column', () => {
+
+  // })
+
+  // it('should show link for hotel under second column', () => {
+
+  // })
+
+  // it('should show offer name cancellation type')
 });

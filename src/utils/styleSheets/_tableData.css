@@ -1,9 +1,51 @@
+#dataTable {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+td {
+  padding-right: 50px;
+}
+
 mark {
   position: relative;
+  display: inline;
   z-index: 1;
-  left: -58.5%;
+  left: -56.5%;
   bottom: 90px;
   padding: 2px;
   background-color: white;
-  color: red;
+  color: #dc143c;
+}
+
+.propertyAddress {
+  color: gray;
+}
+
+#link {
+  padding-top: 10px;
+  color: #dc143c !important;
+}
+
+.cancellationType {
+  color: green;
+  padding-top: 25px;
+}
+
+.rating {
+  font-size: 1rem !important;
+  padding-left: 10px;
+}
+
+.propertyPricing {
+  padding-top: 55px;
+}
+
+.priceTxt {
+  color: gray;
+}
+
+.savings {
+  color: rgb(70, 60, 62);
 }
