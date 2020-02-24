@@ -13,12 +13,22 @@ class TableData extends Component {
     order: null
   };
 
+  /**************
+   * @componentDidUpdate
+   *  - Retrieve the sortingValue from SortAndTotal
+   *  - Set the states of field on `price` column & order `ascending` or 'descending`
+   **************/
   componentDidUpdate = prevProps => {
     if (prevProps.sortingValue !== this.props.sortingValue) {
       let order = this.props.sortingValue === 'priceAsc' ? 'asc' : 'desc';
       this.setState({ field: 'offer.displayPrice.amount', order });
     }
   };
+
+  /**************
+   * @propertyImg
+   *  - Returns json object for the first column with property image and title
+   **************/
 
   propertyImg = () => {
     const ImgColumn = {
@@ -36,6 +46,14 @@ class TableData extends Component {
     return ImgColumn;
   };
 
+  /**************
+   * @propertyDetails
+   *  - Returns json object for the second column with
+   *    - rating (if ratingType is self outputs CheckCircle icon if not starIcon)
+   *    - Property Address
+   *    - Offer Name
+   *    - If cancellationType is FREE_CANCELLATION displays 'Free Cancellation'
+   **************/
   propertyDetails = () => {
     const propertyDetails = {
       dataField: `property.title`,
@@ -94,6 +112,13 @@ class TableData extends Component {
     return propertyDetails;
   };
 
+  /**************
+   * @propertyPrice
+   *  - Returns json object for the third column with
+   *    - Property price
+   *    - Saving amount
+   **************/
+
   propertyPrice = () => {
     const priceColumn = {
       dataField: `offer.displayPrice.amount`,
@@ -123,6 +148,10 @@ class TableData extends Component {
     return priceColumn;
   };
 
+  /**************
+   * @render
+   *  - Render bootstrap table with sorting
+   **************/
   render() {
     const columns = [
       this.propertyImg(),

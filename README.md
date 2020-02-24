@@ -1,8 +1,27 @@
+# Qantas Group Accommodation Front-End Code Test
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## User Story Implemented
+
+As a user of Qantas Hotels I would like to see a list of hotels that can be sorted by price.
+
+### approach 
+
+TDD approch has been undertaken.
+Used BootstrapTable to display table data and sort the hotel prices by ascending and descending order
+Used material-ui for style the components
+
+### trade-offs
+Has not implemented Responsive design
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install the npm packages needed to run the project.
 
 ### `npm start`
 
