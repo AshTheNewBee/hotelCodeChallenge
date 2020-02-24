@@ -58,7 +58,7 @@ class TableData extends Component {
     const propertyDetails = {
       dataField: `property.title`,
       formatter: (cell, row, rowIndex, extraData) => (
-        <div>
+        <div className="propertyDetails">
           <Typography className="propertyTitle" variant="h6">
             {cell.length > 32 ? cell.substring(0, 32) + '...' : cell}
             <Rating
