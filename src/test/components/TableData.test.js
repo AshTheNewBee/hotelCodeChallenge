@@ -259,14 +259,14 @@ describe('Should create table with hotel data', () => {
       testRow_FreeCancellation_savings
     );
     expect(formatter.props.children[2].props.className).toEqual('savings');
-    expect(formatter.props.children[1].props.children[1]).toEqual('30.0');
+    expect(formatter.props.children[2].props.children).toEqual('30.0');
   });
 
   it('should not show saving amount if not exist', () => {
     const wrapper = shallow(<TableData />);
     const column = wrapper.instance().propertyPrice();
     const formatter = column.formatter('32.00', testRow);
-    expect(formatter.props.children[2]).toEqual(false);
+    expect(formatter.props.children[2]).toEqual(undefined);
   });
 
   //------------------ Sort -----------------------------------------
