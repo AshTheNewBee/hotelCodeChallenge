@@ -1,10 +1,10 @@
-# Qantas Group Accommodation Front-End Code Test
+# Accommodation Front-End Code Test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## User Story Implemented
 
-As a user of Qantas Hotels I would like to see a list of hotels that can be sorted by price.
+As a user of Hotels I would like to see a list of hotels that can be sorted by price.
 
 ### approach 
 
